@@ -1,7 +1,7 @@
 const request = require('request');
-//take input as to which breed is desired (allow "Siberian" to become "chartreux" etc)
 
-const myArgs = process.argv;  //.slice(2);
+//take input as to which breed is desired (allow "Siberian" to become "chartreux" etc)
+const myArgs = process.argv;  
 console.log("First argument [2]: ", myArgs[2]);
 let webString = 'https://api.thecatapi.com/v1/breeds/search?q=';
 
@@ -15,9 +15,9 @@ request(webString, function(error, response, body) {
   }
   const data = JSON.parse(body);
   // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  //   console.log('type of' , typeof body);
-  //   console.log('body:', body); // Print the HTML for the Google homepage.
-  //   console.log("Data is: ", data);
+  // console.log('type of' , typeof body);
+  // console.log('body:', body); // Print the HTML for the Google homepage.
+  // console.log("Data is: ", data);
     
   if (data[0] === undefined) {
     console.log("We're sorry, we can't find that breed");
